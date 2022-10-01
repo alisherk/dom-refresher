@@ -1,7 +1,20 @@
+
+const noteDiv = document.querySelector('#notes'); 
+
+const span = document.createElement('span'); 
+
+span.innerText = 'Glad to get my notes out'; 
+
+span.style.marginLeft = '100px'; 
+
+span.style.backgroundColor = 'red';
+
+noteDiv.append(span);
+
+
 const list = document.querySelector('#book-list ul');
 const addForm = document.forms['add-book'];
 const lastChild = document.querySelector('li:last-child');
-
 
 addForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -19,11 +32,6 @@ addForm.addEventListener('submit', (e) => {
   li.appendChild(bookName);
 
   li.appendChild(delBtn);
-
-  //styling li directly by property
-  //li.style.color = 'red';
-  //li.style.marginTop = '100px';
-  //li.className = '.test';
 
   //add content to delete button
   delBtn.textContent = 'Delete';
@@ -69,7 +77,7 @@ searchBar.addEventListener('keyup', (e) => {
 
 list.addEventListener('click', (e) => {
   if (e.target.className === 'delete') {
-    console.log(e.target.parentElement)
+    console.log(e.target.parentElement);
     const li = e.target.parentElement;
 
     list.removeChild(li);
@@ -79,8 +87,7 @@ list.addEventListener('click', (e) => {
 const tabs = document.querySelector('.tabs');
 const panels = document.querySelectorAll('.panel');
 
-
-tabs.addEventListener('click', e => {
+tabs.addEventListener('click', (e) => {
   if (e.target.tagName == 'LI') {
     const targetPanel = document.querySelector(e.target.dataset.target);
     // .dataset looks for data attributes like the data-target attr in the HTML
@@ -95,9 +102,8 @@ tabs.addEventListener('click', e => {
   }
 });
 
-const mainTitle = document.querySelector('#page-banner'); 
+const mainTitle = document.querySelector('#page-banner');
 
-mainTitle.addEventListener('click', e => {
-  mainTitle.classList.toggle('active')
-})
-
+mainTitle.addEventListener('click', (e) => {
+  mainTitle.classList.toggle('active');
+});

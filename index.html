@@ -37,6 +37,9 @@
           </li>
         </ul>
       </div>
+      <div id="notes"> 
+
+      </div>
       <form id="add-book">
         <span class="row">
           <input type="checkbox" id="hide" />
@@ -46,6 +49,7 @@
         <input type="text" placeholder="Add a book..." />
         <button>Add</button>
       </form>
+      <div id="root"></div>
 	  <div id="tabbed-content">
         <ul class="tabs">
           <li data-target="#about" class="active">About</li>
@@ -59,9 +63,25 @@
           <p>Content for contact tab...</p>
           <p>Content for contact</p>
         </div>
+
       </div>
     </div>
     </div>
+    <!-- Load React. -->
+    <!-- Load our React component. -->
     <script src="app.js"></script>
+    <script type="text/babel" src="WelcomeBack.js"></script>
+    <script
+      src="https://unpkg.com/react@16/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      ReactDOM.render(<WelcomeBack />, document.querySelector("#root"));
+    </script>
   </body>
 </html>
